@@ -1,40 +1,56 @@
-# Google Forms Auto Filler with Weighted Random Answers
+# Google Form Auto Filler
 
-Automates filling and submitting Google Forms using Selenium WebDriver.  
-Supports configuring weighted probabilities for answer choices to simulate realistic response patterns.
+Automate filling and submitting Google Forms multiple times using Selenium, with weighted random selection for each question's options.
 
 ---
 
 ## Features
 
-- Automatically selects answers based on specified probability weights per question  
-- Handles multiple choice questions with radio buttons  
-- Waits for elements to load before interaction  
-- Clicks the submit button and waits for confirmation  
-- Configurable number of form submissions  
+- Automatically selects radio button options based on predefined probabilities per question.
+- Handles dynamic loading of form elements reliably.
+- Waits for submission confirmation before proceeding.
+- Easily configurable number of form submissions.
 
 ---
 
 ## Requirements
 
-- Python 3.x  
-- Selenium (`pip install selenium`)  
-- Chrome WebDriver (compatible with your Chrome version)  
+- Python 3.x
+- [Selenium](https://pypi.org/project/selenium/) (`pip install selenium`)
+- Google Chrome browser
+- ChromeDriver matching your Chrome version ([Download here](https://chromedriver.chromium.org/downloads))
 
 ---
 
 ## Setup
 
-1. Download the ChromeDriver executable from [https://sites.google.com/chromium.org/driver/](https://sites.google.com/chromium.org/driver/)  
-2. Place the `chromedriver.exe` in a known path and update the `chromedriver_path` variable in the script accordingly  
+1. **Download and install ChromeDriver**  
+   Make sure you download the ChromeDriver version that matches your installed Google Chrome browser version from the [official site](https://chromedriver.chromium.org/downloads).
+
+2. **Configure the script**  
+   - Set the path to your ChromeDriver executable in the script:
+
+     ```python
+     chromedriver_path = r"C:\path\to\your\chromedriver.exe"
+     ```
+
+   - Set your Google Form URL:
+
+     ```python
+     form_url = "https://docs.google.com/forms/d/e/your-form-id/viewform"
+     ```
+
+   - Adjust the number of form submissions as needed:
+
+     ```python
+     number_of_responses = 100
+     ```
 
 ---
 
 ## Usage
 
-1. Modify the `form_url` variable in the script to your target Google Form URL  
-2. Adjust the `probabilites` dictionary to reflect the weighted answer probabilities per question  
-3. Run the script:
+Run the script using:
 
 ```bash
 python your_script_name.py
